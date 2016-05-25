@@ -20,7 +20,7 @@
                 var text2 = [{ firstName: "Maxim", lastName: "Baranovskyi"}];
                 var obj = JSON.parse(text);
                 var result = "";
-                
+                var emptyElement = "";
                 for (var key in obj){ //key == employees
                     result += key + ": ";
                     if (typeof(obj[key])==="object"){
