@@ -1,0 +1,8 @@
+{
+    "name": "jQuery_training",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "th",
+    "contributors": [],
+    "dependencies": {}
+}

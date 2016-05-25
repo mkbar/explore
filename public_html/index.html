@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            div.ex {
+                background-color: #e5eecc;
+                padding: 7px;
+                border: solid 1px #c3c3c3;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+        <script>
+            $(function(){
+                var text = '{"employees":[' +
+                '{ "firstName":"John", "lastName":"Doe" },' + 
+                '{ "firstName":"Max", "lastName":"Bar" }]}';
+                var text2 = [{ firstName: "Maxim", lastName: "Baranovskyi"}];
+                var obj = JSON.parse(text);
+                var result = "";
+                
+                for (var key in obj){ //key == employees
+                    result += key + ": ";
+                    if (typeof(obj[key])==="object"){
+                        for (var key2 in obj[key]){ //key2 == [0,1]
+                            result += "<br>";
+                            for (var key3 in obj[key][key2]){ //key3 == {},{}
+                                result += obj[key][key2][key3] + " ";
+                            }
+                            result = result.slice(0, result.length-1);
+                        }
+                    }
+                    else {
+                        result += obj[key];
+                    }
+                }
+                document.getElementsByClassName("ex")[0].innerHTML = result;
+            });
+        </script>
+    </head>
+    <body>
+        <button class="hide">Hide me</button>
+        <button class="stop">Stop</button>
+        <a id="aa" href="http://youtube.com/">youtube</a>
+        <input type="text" id="test" value="Mickey Mouse">
+        <div class="ex" style="width:300px; height: 100px; position: relative;">
+                <p>Contact: Helen Bennett<br> 
+                Garden House Crowther Way<br>
+                London</p>
+        </div>
+        <div style="width:300px; height: 100px; position: relative;">
+                Lorem ipsum
+        </div>
+    </body>
+</html>
