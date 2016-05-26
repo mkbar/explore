@@ -14,28 +14,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
         <script>
             $(function(){
-                var text = '{"employees":[' +
-                '{ "firstName":"John", "lastName":"Doe" },' + 
-                '{ "firstName":"Max", "lastName":"Bar" }]}';
-                var text2 = [{ firstName: "Maxim", lastName: "Baranovskyi"}];
-                var obj = JSON.parse(text);
-                var result = "";
                 
-                for (var key in obj){ //key == employees
-                    result += key + ": ";
-                    if (typeof(obj[key])==="object"){
-                        for (var key2 in obj[key]){ //key2 == [0,1]
-                            result += "<br>";
-                            for (var key3 in obj[key][key2]){ //key3 == {},{}
-                                result += obj[key][key2][key3] + " ";
-                            }
-                            result = result.slice(0, result.length-1);
-                        }
-                    }
-                    else {
-                        result += obj[key];
-                    }
-                }
                 document.getElementsByClassName("ex")[0].innerHTML = result;
             });
         </script>
